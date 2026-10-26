@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090811">
+    <title>TrendTrace AI | Understand what’s trending</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { color-scheme: dark; --bg:#090811; --panel:#11101b; --line:#272434; --text:#f7f5fc; --muted:#a09bad; --purple:#a78bfa; --pink:#e879f9; }
+        * { box-sizing:border-box; }
+        body { margin:0; background:radial-gradient(ellipse at 50% 8%,rgba(128,77,220,.19),transparent 48%),var(--bg); color:var(--text); font:15px "DM Sans",sans-serif; }
+        a { color:inherit; text-decoration:none; }
+        .wrap { width:min(1120px,calc(100% - 44px)); margin:auto; }
+        .nav { height:78px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,.07); }
+        .brand { display:flex; align-items:center; gap:11px; font:700 19px "Space Grotesk",sans-serif; letter-spacing:-.5px; }
+        .logo { display:grid; place-items:center; width:34px; height:34px; color:#fff; border-radius:11px; background:linear-gradient(135deg,#8b5cf6,#d946ef); box-shadow:0 0 25px #8b5cf644; }
+        .brand span { color:#c4b5fd; }
+        .nav-link { color:#c2bdce; font-weight:600; }
+        .nav-link:hover { color:#fff; }
+        .hero { min-height:650px; padding:106px 0 82px; text-align:center; position:relative; }
+        .eyebrow { display:inline-flex; align-items:center; gap:9px; padding:8px 13px; color:#d7c8ff; border:1px solid #9c78ef55; border-radius:30px; background:#8b5cf61c; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+        .dot { width:7px; height:7px; border-radius:50%; background:#c4b5fd; box-shadow:0 0 13px #a78bfa; }
+        h1 { max-width:900px; margin:27px auto 18px; font:700 clamp(44px,8vw,82px)/1.02 "Space Grotesk",sans-serif; letter-spacing:-4px; }
+        .gradient { color:#c4b5fd; background:linear-gradient(95deg,#c4b5fd,#e879f9); background-clip:text; -webkit-text-fill-color:transparent; }
+        .lead { max-width:625px; margin:0 auto; color:var(--muted); font-size:17px; line-height:1.8; }
+        .search { display:flex; gap:10px; width:min(660px,100%); margin:32px auto 0; padding:7px; background:#151321; border:1px solid #403655; border-radius:15px; box-shadow:0 18px 70px #0008,0 0 35px #8b5cf61c; }
+        .search input { min-width:0; flex:1; padding:12px 14px; color:#fff; border:0; outline:0; background:transparent; font:inherit; }
+        .search input::placeholder { color:#777184; }
+        button { font:inherit; cursor:pointer; }
+        .primary { padding:12px 19px; color:white; font-weight:700; border:0; border-radius:10px; background:linear-gradient(135deg,#8b5cf6,#a855f7); box-shadow:0 7px 24px #8b5cf633; }
+        .primary:hover { filter:brightness(1.12); transform:translateY(-1px); }
+        .topics { display:flex; flex-wrap:wrap; justify-content:center; gap:9px; margin-top:18px; }
+        .topics form { margin:0; }
+        .chip { padding:8px 12px; color:#c7c1d2; background:#14121e; border:1px solid #302b3d; border-radius:24px; font-size:12px; }
+        .chip:hover { color:#e6dcff; border-color:#8b5cf6; }
+        .proof { display:flex; justify-content:center; gap:33px; margin-top:57px; color:#a9a3b4; font-size:12px; }
+        .proof strong { color:#eeeaf6; font-size:14px; }
+        .proof-item { display:grid; gap:4px; }
+        .features { padding:35px 0 95px; }
+        .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+        .feature { padding:25px; border:1px solid var(--line); border-radius:17px; background:linear-gradient(145deg,#14121e,#0f0e17); }
+        .feature-icon { display:grid; place-items:center; width:42px; height:42px; margin-bottom:20px; color:#d7c8ff; border-radius:13px; background:#8b5cf622; font-size:20px; }
+        h2 { margin:0 0 9px; font:600 18px "Space Grotesk",sans-serif; }
+        .feature p { margin:0; color:var(--muted); line-height:1.7; font-size:13px; }
+        footer { padding:22px 0; color:#777183; border-top:1px solid #252231; text-align:center; font-size:12px; }
+        @media(max-width:650px) { .wrap{width:min(100% - 30px,1120px)} .hero{min-height:auto;padding:78px 0 55px} h1{letter-spacing:-2px} .lead{font-size:15px} .search{align-items:stretch} .search input{padding-left:9px} .primary{padding:10px 13px} .proof{gap:14px;flex-wrap:wrap;margin-top:40px} .feature-grid{grid-template-columns:1fr} }
+        @media(prefers-reduced-motion:no-preference) { html{scroll-behavior:smooth} .primary,.chip{transition:transform .18s,filter .18s,border-color .18s} }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <nav class="nav" aria-label="Main navigation">
+            <a class="brand" href="/"><span class="logo" aria-hidden="true">✦</span>TrendTrace <span>AI</span></a>
+            <a class="nav-link" href="#features">How it works</a>
+        </nav>
+        <main>
+            <section class="hero">
+                <div class="eyebrow"><span class="dot"></span>Trend lifecycle intelligence</div>
+                <h1>See the signal.<br><span class="gradient">Understand the story.</span></h1>
+                <p class="lead">Track a topic across news and public social conversation. See when it surfaced, when it peaked, and how the conversation moves.</p>
+                <form class="search" method="post" action="{{ url_for('analytics') }}">
+                    <input name="topic" maxlength="150" required placeholder="Search a topic, event or person..." aria-label="Topic">
+                    <button class="primary" type="submit">Explore trend <span aria-hidden="true">↗</span></button>
+                </form>
+                <div class="topics" aria-label="Popular topics">
+                    {% for item in topics %}
+                    <form method="post" action="{{ url_for('analytics') }}">
+                        <input type="hidden" name="topic" value="{{ item }}">
+                        <button class="chip" type="submit">{{ item }}</button>
+                    </form>
+                    {% endfor %}
+                </div>
+                <div class="proof" aria-label="Data sources and time range">
+                    <div class="proof-item"><strong>30 days</strong><span>Trend window</span></div>
+                    <div class="proof-item"><strong>News + social</strong><span>Two perspectives</span></div>
+                    <div class="proof-item"><strong>Daily activity</strong><span>One clear timeline</span></div>
+                </div>
+            </section>
+            <section class="features" id="features">
+                <div class="feature-grid">
+                    <article class="feature"><div class="feature-icon" aria-hidden="true">⌁</div><h2>Follow the lifecycle</h2><p>See the first, peak and latest observed activity for a topic in the selected 30-day window.</p></article>
+                    <article class="feature"><div class="feature-icon" aria-hidden="true">◷</div><h2>Compare daily signals</h2><p>Chart retrieved NewsAPI articles alongside publicly searchable Bluesky posts.</p></article>
+                    <article class="feature"><div class="feature-icon" aria-hidden="true">✧</div><h2>Explore the source</h2><p>Open the news stories and public posts behind the activity counts.</p></article>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer><div class="wrap">TrendTrace AI · Evidence-led trend exploration</div></footer>
+</body>
+</html>
