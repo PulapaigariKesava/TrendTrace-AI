@@ -94,3 +94,10 @@ Built as a project exploring web development, news intelligence, data visualizat
 ---
 
 ⭐ If you find this project interesting, explore the live demo and repository!
+## 📸 Project Screenshots
+
+### Home Page
+![TrendTrace AI Home Page](screenshots/home.png)
+
+### Analytics Dashboard
+![TrendTrace AI Analytics](screenshots/analytics.png)
