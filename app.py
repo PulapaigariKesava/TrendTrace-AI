@@ -329,6 +329,7 @@ footer {
     .search-form input { padding: 9px 5px; font-size: 13px; }
 }
 </style>
+  <meta name="google-site-verification" content="te5R-_G6a7ffdQQMswbItutHRBXGsxJEnIexue-o9wA" />
 </head>
 
 <body>
